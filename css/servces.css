@@ -1,0 +1,722 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        :root {
+            --primary-color: #ffc107;
+            --dark-color: #1a1a1a;
+            --light-color: #f8f9fa;
+        }
+
+
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+nav{
+    background-color: #27272771;
+    height: 10%;
+    text-align: center;
+}
+           .content-section {
+            padding: 60px 0;
+            min-height: 100vh;
+        }
+        
+        /* تنسيقات النافبار */
+        .navbar {
+            /* background-color: var(--dark-bg); */
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+        
+        .logo-img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 0 5px;
+            border-radius: 5px;
+            padding: 8px 15px !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* تنسيقات السوشيال ميديا */
+        .nav-social {
+            display: flex;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .nav-social a {
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-social a:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            background: var(--primary-color);
+            color: #000 !important;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* تنسيقات زر القائمة للموبايل */
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 5px 10px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* تنسيقات القائمة المنسدلة للموبايل */
+        .navbar-collapse {
+            margin-top: 10px;
+        }
+        
+/* ===== MEDIA QUERIES ===== */
+
+/* شاشات كبيرة (لاب توب - أكبر من 1200px) */
+@media (min-width: 1200px) {
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 200px;
+    }
+    .navbar-nav {
+        gap: 12px;
+    }
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* شاشات متوسطة (تابلت أفقي - 992px إلى 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 160px;
+    }
+    .navbar-nav {
+        gap: 8px;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 6px 12px !important;
+    }
+}
+
+/* شاشات صغيرة (تابلت عمودي - 768px إلى 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+   nav {
+        height: 15vh;
+        margin-top: -30px;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 180px;
+    }
+    .navbar-nav {
+        gap: 5px;
+    }
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 5px 10px !important;
+    }
+    .nav-social {
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+    .nav-social a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* شاشات جد صغيرة (موبايل أفقي - 576px إلى 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    nav {
+        height: 13vh;
+        margin-top: -50px;
+        align-items: center;
+    }
+    .navbar-brand {
+        width: 32%;
+    }
+    .logo-img {
+        max-width: 150px;
+    }
+    .navbar-collapse {
+        background-color: rgba(39, 39, 39, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 12px;
+    }
+    .navbar-nav {
+        gap: 6px;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 15px !important;
+        margin: 3px 0;
+    }
+    .nav-social {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 14px;
+    }
+}
+
+/* شاشات موبايل (أقل من 576px) */
+@media (max-width: 575.98px) {
+    nav {
+        height: 12vh;
+        margin-top: -50px;
+        align-items: center;
+    }
+    .navbar {
+        padding: 8px 0;
+    }
+    .navbar-brand {
+        width: 45%;
+    }
+    .logo-img {
+        max-width: 150px;
+    }
+    .navbar-collapse {
+        background-color: rgba(39, 39, 39, 0.95);
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    .navbar-nav {
+        gap: 3px;
+    }
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 8px 12px !important;
+        margin: 3px 0;
+    }
+    .nav-social {
+        justify-content: center;
+        margin-top: 10px;
+        gap: 12px;
+        font-size: 1.1rem;
+    }
+    .nav-social a {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* شاشات صغيرة جداً (أقل من 400px) */
+@media (max-width: 399.98px) {
+    .navbar-brand {
+        width: 50%;
+    }
+    .logo-img {
+        max-width: 90px;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 10px !important;
+    }
+    .nav-social {
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .nav-social a {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* تحسينات للوضع الأفقي على الموبايل */
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar {
+        min-height: 60px;
+    }
+    .navbar-brand {
+        width: 25%;
+    }
+    .logo-img {
+        max-width: 85px;
+    }
+    .navbar-collapse {
+        padding: 8px;
+    }
+}
+
+/* ===== TRANSITION EFFECTS ===== */
+.nav-social a,
+.nav-link,
+.hover-effect,
+.service-card,
+.icon-wrapper,
+.social-btn,
+.back-to-top,
+.service-item,
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* ===== HOVER EFFECTS ===== */
+.nav-social a:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+.nav-link:hover,
+.service-item:hover {
+    color: #ffc107 !important;
+}
+
+.hover-effect:hover,
+.social-btn:hover,
+.back-to-top:hover {
+    transform: scale(1.05);
+}
+
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+}
+
+.service-card:hover .icon-wrapper {
+    transform: scale(1.2);
+}
+
+.service-item:hover {
+    transform: translateX(-5px);
+    color: #ffc107 !important;
+}
+
+.service-item:hover .transition-all {
+    transform: translateX(-3px);
+}
+
+
+.navbar-scrolled {
+    background-color: #1a1a1a !important;
+}
+
+/* ===== SOCIAL MEDIA BUTTONS ===== */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-btn:hover::before {
+    opacity: 1;
+}
+
+.social-btn i {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* Social platform specific styles */
+.social-btn.facebook {
+    background: linear-gradient(135deg, #1877F2, #166FE5);
+    box-shadow: 0 4px 15px rgba(24,119,242,0.3);
+}
+
+.social-btn.instagram {
+    background: linear-gradient(135deg, #E4405F, #C13584, #833AB4, #5851DB, #405DE6);
+    box-shadow: 0 4px 15px rgba(228,64,95,0.3);
+}
+
+.social-btn.snapchat {
+    background: linear-gradient(135deg, #FFFC00, #FFF000);
+    box-shadow: 0 4px 15px rgba(255,252,0,0.3);
+}
+
+.social-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+}
+
+.social-btn.snapchat i {
+    color: #000 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Hover shadow effects */
+.social-btn.facebook:hover { box-shadow: 0 6px 20px rgba(24,119,242,0.4); }
+.social-btn.instagram:hover { box-shadow: 0 6px 20px rgba(228,64,95,0.4); }
+.social-btn.snapchat:hover { box-shadow: 0 6px 20px rgba(255,252,0,0.4); }
+.social-btn.whatsapp:hover { box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nav-social {
+        margin-left: 0;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #ffc107;
+            border: none;
+            border-radius: 50%;
+            color: #000;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: #e0a800;
+            transform: scale(1.1);
+        }
+        
+      
+  
+        /* فلتر المشاريع */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--dark-color);
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* تأثيرات خاصة */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating-element {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+         /* كروت المشاريع */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+
+
+          /* تحسين السلايدر */
+        .carousel-item {
+            transition: transform 0.8s ease-in-out;
+        }
+        
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.24);
+            padding: 40px;
+            border-radius: 15px;
+            /* backdrop-filter: blur(10px); */
+        }
+        
+        
+        /** تحسين الصور **/
+        .slide-img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-slider-section {
+    perspective: 1000px;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.15) translateX(-30px);
+    opacity: 0.9;
+    filter: brightness(0.8) contrast(1.1);
+    transition: all 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-item.active .slide-img {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+    filter: brightness(1) contrast(1);
+}
+
+/* الطبقة الشفافة */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.541) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+
+
+.indicator-btn {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    border: 2px solid #fff !important;
+    background: transparent !important;
+    margin: 0 8px !important;
+    transition: all 0.3s ease !important;
+    opacity: 0.7;
+}
+
+.indicator-btn.active {
+    background: #ffc107 !important;
+    border-color: #ffc107 !important;
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.indicator-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* أزرار التحكم */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 193, 7, 0.9);
+    border-radius: 50%;
+    margin: 0 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hero-slider-section:hover .carousel-control-prev,
+.hero-slider-section:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 30px 30px;
+    filter: brightness(0) invert(1);
+}
+
+/* النص والأنيميشن */
+.carousel-caption {
+    z-index: 2;
+    right: 0;
+    left: 0;
+    bottom: auto;
+    padding-bottom: 100px;
+}
+
+.slide-title {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease 0.3s;
+}
+
+.slide-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease 0.5s;
+}
+
+.slide-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.7s;
+}
+
+.carousel-item.active .slide-title,
+.carousel-item.active .slide-text,
+.carousel-item.active .slide-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثيرات إضافية */
+.slide-btn {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: all 0.3s ease !important;
+}
+
+.slide-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.slide-btn:hover::before {
+    left: 100%;
+}
+
+.slide-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(255, 191, 0, 0.4);
+}
+
+/* تحسينات للجوال */
+@media (max-width: 768px) {
+    .hero-slider-section {
+        height: 70vh;
+    }
+    
+    .carousel-caption {
+        padding-bottom: 50px;
+    }
+    
+    .slide-title {
+        font-size: 2rem !important;
+    } 
+    
+    .slide-text {
+        font-size: 1.2rem !important;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 1;
+        width: 45px; 
+        height: 45px;
+        margin: 0 10px;
+    }
+}
