@@ -356,7 +356,7 @@ nav{
 /* ===== HERO SECTION ===== */
 .hero-section {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('/img/WhatsApp\ Image\ 2025-10-21\ at\ 5.12.29\ PM\ \(5\).jpeg');
+                url('img/WhatsApp\ Image\ 2025-10-21\ at\ 5.12.29\ PM\ \(5\).jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
