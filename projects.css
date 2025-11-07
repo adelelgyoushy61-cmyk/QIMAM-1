@@ -1,0 +1,1132 @@
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      } 
+       
+       :root {
+            --primary-color: #ffc107;
+            --dark-color: #1a1a1a;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+          
+        }
+
+
+        nav{
+    background-color: #27272771;
+    height: 10%;
+    text-align: center;
+}
+           .content-section {
+            padding: 60px 0;
+            min-height: 100vh;
+        }
+        
+        /* تنسيقات النافبار */
+        .navbar {
+            /* background-color: var(--dark-bg); */
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            transition: all 0.3s ease;
+            width: auto;
+            min-width: 150px;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+        
+        .logo-img {
+            width: auto;
+            max-width: 250px;
+            min-width: 180px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 0 5px;
+            border-radius: 5px;
+            padding: 8px 15px !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* تنسيقات السوشيال ميديا */
+        .nav-social {
+            display: flex;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .nav-social a {
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-social a:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            background: var(--primary-color);
+            color: #000 !important;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* تنسيقات زر القائمة للموبايل */
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 5px 10px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* تنسيقات القائمة المنسدلة للموبايل */
+        .navbar-collapse {
+            margin-top: 10px;
+        }
+        
+/* ===== MEDIA QUERIES ===== */
+
+/* شاشات كبيرة (لاب توب - أكبر من 1200px) */
+@media (min-width: 1200px) {
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 200px;
+    }
+    .navbar-nav {
+        gap: 12px;
+    }
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* شاشات متوسطة (تابلت أفقي - 992px إلى 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 160px;
+    }
+    .navbar-nav {
+        gap: 8px;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 6px 12px !important;
+    }
+}
+
+/* شاشات صغيرة (تابلت عمودي - 768px إلى 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+   nav {
+        height: 15vh;
+        margin-top: -30px;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        width: 20%;
+    }
+    .logo-img {
+        max-width: 180px;
+    }
+    .navbar-nav {
+        gap: 5px;
+    }
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 5px 10px !important;
+    }
+    .nav-social {
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+    .nav-social a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* شاشات جد صغيرة (موبايل أفقي - 576px إلى 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    nav {
+        height: 13vh;
+        margin-top: -50px;
+        align-items: center;
+    }
+    .navbar-brand {
+        width: 32%;
+    }
+    .logo-img {
+        max-width: 150px;
+    }
+    .navbar-collapse {
+        background-color: rgba(39, 39, 39, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 12px;
+    }
+    .navbar-nav {
+        gap: 6px;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 15px !important;
+        margin: 3px 0;
+    }
+    .nav-social {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 14px;
+    }
+}
+
+/* شاشات موبايل (أقل من 576px) */
+@media (max-width: 575.98px) {
+    nav {
+        height: 14vh;
+        margin-top: -30px;
+        align-items: center;
+    }
+    .navbar {
+        padding: 8px 0;
+    }
+    .navbar-brand {
+        width: 45%;
+    }
+    .logo-img {
+        max-width: 180px;
+    }
+    .navbar-collapse {
+        background-color: rgba(39, 39, 39, 0.95);
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    .navbar-nav {
+        gap: 3px;
+    }
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 8px 12px !important;
+        margin: 3px 0;
+    }
+    .nav-social {
+        justify-content: center;
+        margin-top: 10px;
+        gap: 12px;
+        font-size: 1.1rem;
+    }
+    .nav-social a {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* شاشات صغيرة جداً (أقل من 400px) */
+@media (max-width: 399.98px) {
+ nav {
+        height: 13vh;
+        margin-top: -50px;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        width: auto;
+    }
+    .logo-img {
+        max-width: 140px;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 10px !important;
+    }
+    .nav-social {
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .nav-social a {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* تحسينات للوضع الأفقي على الموبايل */
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar {
+        min-height: 60px;
+    }
+    .navbar-brand {
+        width: 25%;
+    }
+    .logo-img {
+        max-width: 85px;
+    }
+    .navbar-collapse {
+        padding: 8px;
+    }
+}
+
+/* ===== TRANSITION EFFECTS ===== */
+.nav-social a,
+.nav-link,
+.hover-effect,
+.service-card,
+.icon-wrapper,
+.social-btn,
+.back-to-top,
+.service-item,
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* ===== HOVER EFFECTS ===== */
+.nav-social a:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+.nav-link:hover,
+.service-item:hover {
+    color: #ffc107 !important;
+}
+
+.hover-effect:hover,
+.social-btn:hover,
+.back-to-top:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* ===== HERO SECTION PURE CSS (مشاريعنا) ===== */
+.projects-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("/img/WhatsApp\ Image\ 2025-10-21\ at\ 5.12.30\ PM.jpeg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* خلفية متحركة أو Particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* المحتوى داخل الهيرو */
+.projects-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* النص الرئيسي */
+.carousel-caption h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption p {
+  font-size: 1.3rem;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* النص السفلي Projects Title */
+.text-reveal h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.text-reveal span {
+  color: #ffc107;
+}
+
+.text-reveal p {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* ظهور ناعم عند تحميل الصفحة */
+.carousel-caption,
+.text-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.projects-hero.loaded .carousel-caption,
+.projects-hero.loaded .text-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* تابلت */
+@media (max-width: 991.98px) {
+  .carousel-caption h1 {
+    font-size: 2.4rem;
+  }
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+  .text-reveal h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* موبايل أفقي */
+@media (max-width: 767.98px) {
+  .projects-hero {
+    height: 90vh;
+    background-position: center top;
+  }
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .text-reveal h1 {
+    font-size: 1.8rem;
+  }
+  .text-reveal p {
+    font-size: 0.95rem;
+  }
+}
+
+/* موبايل صغير */
+@media (max-width: 575.98px) {
+  .projects-hero {
+    height: 85vh;
+  }
+  .carousel-caption h1 {
+    font-size: 1.6rem;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+  .text-reveal h1 {
+    font-size: 1.6rem;
+  }
+  .text-reveal p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+.text-reveal:nth-child(1) { animation-delay: 0.2s; }
+.text-reveal:nth-child(2) { animation-delay: 0.4s; }
+
+
+
+        /* كروت المشاريع */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.397), rgba(255, 255, 255, 0.387));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* تأثيرات النص */
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .text-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       /* ===== إحصائيات ===== */
+.stats-section {
+  background: linear-gradient(#2d2d2d2c, #ff000015);
+  position: absolute;
+  overflow: hidden;
+  margin-top: 810px; /* نحافظ على مكانها */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  z-index: 5;
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  min-width: 160px;
+}
+
+.stat-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color, #ffbf00);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* لابتوب متوسط */
+@media (max-width: 1200px) {
+  .stats-section {
+    gap: 50px;
+    padding: 70px 20px;
+  }
+  .stat-number {
+    font-size: 2.6rem;
+  }
+  .stat-label {
+    font-size: 1.1rem;
+  }
+}
+
+/* تابلت */
+@media (max-width: 991.98px) {
+  .stats-section {
+    gap: 40px;
+    padding: 60px 15px;
+  }
+  .stat-number {
+    font-size: 2.3rem;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+
+/* موبايل أفقي (يظل أفقي لكن أصغر) */
+@media (max-width: 767.98px) {
+  .stats-section {
+    flex-direction: row; /* يفضل أفقي */
+    gap: 20px;
+    padding: 40px 10px;
+    margin-top: 560px;
+    flex-wrap: nowrap; /* يمنع النزول لسطر جديد */
+    overflow-x: auto; /* لو الشاشة ضيقة يسمح بالتمرير */
+  }
+
+  .stat-item {
+    min-width: 120px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* موبايل صغير جدًا */
+@media (max-width: 575.98px) {
+  .stats-section {
+    margin-top: 550px;
+    padding: 35px 5px;
+    gap: 15px;
+  }
+
+  .stat-item {
+    min-width: 100px;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+
+        /* فلتر المشاريع */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--dark-color);
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* تأثيرات خاصة */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .floating-element {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            color: var(--dark-color);
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .back-to-top:hover {
+            background: #e0a800;
+            transform: scale(1.1);
+        }
+
+
+        /* Effects */
+        .nav-social a,
+        .nav-link,
+        .hover-effect,
+        .service-card,
+        .icon-wrapper,
+        .social-btn,
+        .back-to-top,
+        .service-item,
+        .transition-all {
+            transition: all .3s ease
+        }
+
+        .nav-social a:hover {
+            opacity: 1;
+            transform: translateY(-4px)
+        }
+
+        .nav-link:hover,
+        .service-item:hover {
+            color: #ffc107 !important
+        }
+
+        .hover-effect:hover,
+        .social-btn:hover,
+        .back-to-top:hover {
+            transform: scale(1.05)
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2) !important
+        }
+
+        .service-card:hover .icon-wrapper {
+            transform: scale(1.2)
+        }
+
+        .service-item:hover {
+            transform: translateX(-5px)
+        }
+
+        .service-item:hover .transition-all {
+            transform: translateX(-3px)
+        }
+
+        /* Hero & Layout */
+
+        .navbar-scrolled {
+            background-color: #1a1a1a !important
+        }
+
+        /* Animations */
+        .animate-on-scroll,
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all .6s ease
+        }
+
+        .animate-fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all .6s ease
+        }
+
+        .animate-fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all .6s ease
+        }
+
+        .animate-fade-in-down {
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all .6s ease
+        }
+
+        .animate-on-scroll.animated,
+        .animate-fade-in-up.animated,
+        .animate-fade-in-left.animated,
+        .animate-fade-in-right.animated,
+        .animate-fade-in-down.animated {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .animate-fade-in-left.animated {
+            transform: translateX(0)
+        }
+
+        .animate-fade-in-right.animated {
+            transform: translateX(0)
+        }
+
+        .animate-fade-in-down.animated {
+            transform: translateY(0)
+        }
+
+        /* Delays */
+        .delay-100 {
+            transition-delay: .1s !important
+        }
+
+        .delay-200 {
+            transition-delay: .2s !important
+        }
+
+        .delay-300 {
+            transition-delay: .3s !important
+        }
+
+        .delay-400 {
+            transition-delay: .4s !important
+        }
+
+        .delay-500 {
+            transition-delay: .5s !important
+        }
+
+        /* Social Media */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, .1);
+            opacity: 0;
+            transition: opacity .3s ease
+        }
+
+        .social-btn:hover::before {
+            opacity: 1
+        }
+
+        .social-btn i {
+            position: relative;
+            z-index: 1;
+            color: white
+        }
+
+        .social-btn.facebook {
+            background: linear-gradient(135deg, #1877F2, #166FE5);
+            box-shadow: 0 4px 15px rgba(24, 119, 242, .3)
+        }
+
+        .social-btn.instagram {
+            background: linear-gradient(135deg, #E4405F, #C13584, #833AB4, #5851DB, #405DE6);
+            box-shadow: 0 4px 15px rgba(228, 64, 95, .3)
+        }
+
+        .social-btn.snapchat {
+            background: linear-gradient(135deg, #FFFC00, #FFF000);
+            box-shadow: 0 4px 15px rgba(255, 252, 0, .3)
+        }
+
+        .social-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, .3)
+        }
+
+        .social-btn.snapchat i {
+            color: #000 !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .1)
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.1)
+        }
+
+        .social-btn.facebook:hover {
+            box-shadow: 0 6px 20px rgba(24, 119, 242, .4)
+        }
+
+        .social-btn.instagram:hover {
+            box-shadow: 0 6px 20px rgba(228, 64, 95, .4)
+        }
+
+        .social-btn.snapchat:hover {
+            box-shadow: 0 6px 20px rgba(255, 252, 0, .4)
+        }
+
+        .social-btn.whatsapp:hover {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, .4)
+        }
+
+        /* Footer & Layout */
+        .social-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .footer-about {
+            border-right: 2px solid #ffc107;
+            padding-right: 20px
+        }
+
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .footer-about {
+                border-right: none;
+                border-bottom: 2px solid #ffc107;
+                padding-right: 0;
+                padding-bottom: 20px;
+                margin-bottom: 20px
+            }
+        }
+
+
+
+        /* ================================
+   📱 الموبايل (أقل من 768px)
+================================ */
+@media (max-width: 767px) {
+  /* الهيدر والقائمة */
+  .navbar {
+
+    padding: 10px 15px;
+  }
+
+  .navbar-brand img {
+    width: 120px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  /* البانر الرئيسي */
+  .projects-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .projects-hero p {
+    font-size: 1rem;
+  }
+
+  .projects-hero .display-3 {
+    font-size: 2rem !important;
+  }
+
+  /* شبكة المشاريع */
+  .project-card {
+    margin-bottom: 20px;
+  }
+
+  .project-image img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+
+  #backToTop {
+    right: 10px;
+    bottom: 10px;
+    font-size: 18px;
+  }
+}
+
+/* ================================
+   📲 التابلت (من 768px إلى 1024px)
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-brand img {
+    width: 140px;
+  }
+
+  .nav-link {
+    font-size: 17px;
+  }
+
+  .projects-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .projects-hero p {
+    font-size: 1.2rem;
+  }
+
+  .project-card img {
+    height: 250px;
+  }
+
+  .project-card h5 {
+    font-size: 1.1rem;
+  }
+
+  .stats-section .stat-item {
+    margin-bottom: 30px;
+  }
+
+
+}
+
+/* ================================
+   💻 اللابتوب والديسكتوب (من 1025px فما فوق)
+================================ */
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+
+  .projects-hero h1 {
+    font-size: 3rem;
+  }
+
+  .projects-hero p {
+    font-size: 1.25rem;
+  }
+
+  .project-image img {
+    height: 300px;
+  }
+
+
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .footer-about {
+        border-right: none;
+        border-bottom: 2px solid #ffc107;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .progress-bar-container {
+        width: 6px;
+    }
+    
+    .stat-card {
+        margin-bottom: 1.5rem;
+    }
+
+}
